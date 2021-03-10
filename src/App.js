@@ -1,23 +1,20 @@
+import { useState, useEffect, useRef } from 'react'
+import Output from './components/Output'
+import Keypad from './components/Keypad'
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const [result, setResult] = useState("")
+  const inputRef = useRef(null)
+
+  useEffect( ()=> inputRef.current.focus())
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Output result={result} inputRef={inputRef} />
+      <Keypad result={result} setResult={setResult} />
     </div>
   );
 }
