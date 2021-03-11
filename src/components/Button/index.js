@@ -1,28 +1,15 @@
 import React from 'react'
-import StylesButton from './index.module.css'
+import './index.module.css'
 const Button = (props) => {
-  function handleKeypadChange(event) {
-    // Here, we invoke the callback with the new value
-    props.onChange(event.target.name);
-  }
 
-  // function handleClick(e){
-  //   const result = props.result
-  //   props.setResult(result.concat(e.target.name))
-  // }
-  // function backspace(){
+  const classes = ['btn'];
+  if (typeof props !== 'undefined' && typeof props.type !== 'undefined')
+    classes.push('btn--' + props.type);
 
-  // }
-
-  // function clear(){
-
-  // }
   return (
-    <>
-    <button id={props.buttonId} name={props.buttonName} onClick={handleKeypadChange}>
-      {props.buttonValue}      
+    <button className={classes.join(' ')} onClick={props.onButtonPress}>
+      {props.children}
     </button>
-    </>
   )
 }
 

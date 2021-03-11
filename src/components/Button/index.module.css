@@ -1,5 +1,44 @@
-button{
-  font-size: 22px;
-  padding: 0px 15px;
-  display: inline-block
+/* Button */
+.btn {
+  width: 25%;
+  height: 100%;
+  font-size: 3rem;
+  font-family: inherit;
+  background-color: var(--color-white);
+  border: 1px solid transparent;
+  outline: none;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  transition: all .2s;
+}
+
+.btn:hover {
+  color: var(--color-light-white);
+  background-color: var(--color-tomato);
+}
+
+.btn:active {
+  transform: scale(.95);
+}
+
+.btn--large {
+  width: 50%;
+  color: var(--color-light-white);
+  background-color: var(--color-tomato);
+}
+
+.btn--large:hover {
+  background-color: var(--color-light-white);
+  color: var(--color-tomato);
+}
+
+.btn--primary {
+  color: var(--color-tomato);
+}
+
+.btn--operator {
+  color: var(--color-orange);
 }
